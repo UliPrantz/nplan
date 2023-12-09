@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/richartkeil/nplan/core"
+	"github.com/uliprantz/nplan/core"
 )
 
 func check(e error) {

@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/richartkeil/nplan/core"
-	"github.com/richartkeil/nplan/exporter"
-	"github.com/richartkeil/nplan/parser"
+	"github.com/uliprantz/nplan/core"
+	"github.com/uliprantz/nplan/exporter"
+	"github.com/uliprantz/nplan/parser"
 )
 
 var defaultModelPath = "./dist/model.json"

@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/google/uuid"
-	"github.com/richartkeil/nplan/core"
+	"github.com/uliprantz/nplan/core"
 )
 
 // Hosts

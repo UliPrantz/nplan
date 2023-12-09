@@ -7,7 +7,7 @@ Transforms nmap XML into intermediate JSON and generates a basic network plan in
 Just run
 
 ```sh
-go install github.com/UliPrantz/nplan@latest
+go install github.com/uliprantz/nplan@latest
 ```
 
 By default the binary will be installed to `$GOPATH/bin` (which you could add to your $PATH).
