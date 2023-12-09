@@ -14,6 +14,7 @@ var rows = 8
 var hostWidth = 260
 var hostHeight = 160
 var additionalHeightPerPort = 20
+var additionalNoteHeight = 150
 var padding = 30
 
 // Duplicate Fingerprint hosts display
@@ -171,7 +172,7 @@ func addUnidentifiedHosts(cells []MxCell, scan *core.Scan) []MxCell {
 }
 
 func getHostHeight(host *core.Host) int {
-	return hostHeight + len(host.Ports)*additionalHeightPerPort
+	return hostHeight + len(host.Ports)*additionalHeightPerPort + additionalNoteHeight
 }
 
 func getHostValue(host core.Host) string {
@@ -183,6 +184,9 @@ func getHostValue(host core.Host) string {
 	if host.Hostname != "" {
 		value += fmt.Sprintf("<i>%v</i><br><br>", host.Hostname)
 	}
+	if host.MAC != "" {
+		value += fmt.Sprintf("%v<br>", host.MAC)
+	}
 	if host.IPv4 != "" {
 		value += fmt.Sprintf(
 			"<strong style=\"font-size: %vpx\">%v</strong><br>",
@@ -193,6 +197,7 @@ func getHostValue(host core.Host) string {
 	if host.IPv6 != "" {
 		value += fmt.Sprintf("%v<br>", host.IPv6)
 	}
+
 
 	// Ports
 	if len(host.Ports) > 0 {
