@@ -1,4 +1,4 @@
-module github.com/richartkeil/nplan
+module github.com/UliPrantz/nplan
 
 go 1.17
 
