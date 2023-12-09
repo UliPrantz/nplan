@@ -16,6 +16,7 @@ var hostHeight = 160
 var additionalHeightPerPort = 20
 var additionalNoteHeight = 150
 var padding = 30
+var style = "rounded=1;whiteSpace=wrap;Align=top;html=1;arcSize=2;"
 
 // Duplicate Fingerprint hosts display
 var dupHostsFingerprintX = -400
@@ -83,7 +84,7 @@ func addHosts(cells []MxCell, scan *core.Scan) []MxCell {
 			Id:     uuid.NewString(),
 			Value:  getHostValue(host),
 			Parent: "1",
-			Style:  "rounded=1;whiteSpace=wrap;html=1;arcSize=2",
+			Style:  style,
 			Vertex: "1",
 			MxGeometry: &MxGeometry{
 				X:      fmt.Sprint(currentX),
@@ -133,7 +134,7 @@ func addHostsWithSameFingerprint(cells []MxCell, scan *core.Scan) []MxCell {
 			Id:     uuid.NewString(),
 			Value:  value,
 			Parent: "1",
-			Style:  "rounded=1;whiteSpace=wrap;html=1;arcSize=2",
+			Style:  style,
 			Vertex: "1",
 			MxGeometry: &MxGeometry{
 				X:      fmt.Sprint(currentX),
@@ -156,7 +157,7 @@ func addUnidentifiedHosts(cells []MxCell, scan *core.Scan) []MxCell {
 			Id:     uuid.NewString(),
 			Value:  fmt.Sprintf("Unidentified host:<br><br>MAC: %v<br>IPv6: %v", host.MAC, host.IPv6),
 			Parent: "1",
-			Style:  "rounded=1;whiteSpace=wrap;html=1;arcSize=2",
+			Style:  style,
 			Vertex: "1",
 			MxGeometry: &MxGeometry{
 				X:      fmt.Sprint(currentX),
@@ -182,10 +183,10 @@ func getHostValue(host core.Host) string {
 
 	// Addresses
 	if host.Hostname != "" {
-		value += fmt.Sprintf("<i>%v</i><br><br>", host.Hostname)
+		value += fmt.Sprintf("<i>%v</i><br>", host.Hostname)
 	}
 	if host.MAC != "" {
-		value += fmt.Sprintf("%v<br>", host.MAC)
+		value += fmt.Sprintf("%v<br><br>", host.MAC)
 	}
 	if host.IPv4 != "" {
 		value += fmt.Sprintf(
