@@ -16,7 +16,7 @@ var hostHeight = 160
 var additionalHeightPerPort = 20
 var additionalNoteHeight = 150
 var padding = 30
-var style = "rounded=1;whiteSpace=wrap;Align=top;html=1;arcSize=2;"
+var style = "rounded=1;whiteSpace=wrap;html=1;arcSize=2;verticalAlign=top;"
 
 // Duplicate Fingerprint hosts display
 var dupHostsFingerprintX = -400
